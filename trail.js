@@ -46,10 +46,48 @@ class Wagon {
     }
 
     totalFood() {
-        return this.passengers.reduce(function (total) {
-          return total.food
-        })
+        return this.passengers.reduce(function (total, passenger) {
+          return total += passenger.food
+        }, 0)
     }
 
         
+}
+
+class Doctor extends Traveler {
+    constructor(name, food, isHealthy,) {
+        super(name, food, isHealthy)
+        this.isHealthy = true
+    }
+    
+
+    heal(traveler) {
+        return traveler.isHealthy = true
+    }
+        
+        
+}
+
+class Hunter extends Traveler {
+    constructor(name, food, isHealthy) {
+        super(name, food, isHealthy)
+        this.food = 2
+    }
+
+    hunt() {
+        this.food += 5
+    }
+
+    eat() {
+        if(this.food < 2) {
+            this.food -= 2
+        } else {this.isHealthy === false}
+    }
+
+    giveFood(traveler, numOfFoodUnits) {
+        this.traveler = this.numOfFoodUnits
+        if(this.numOfFoodUnits = 0) {
+            this.traveler = 0
+        }
+    }
 }
